@@ -32,7 +32,7 @@ module LazyConfig
 
           complete_dir_pathname = 
             if environment_aware?
-              base_pathname.join(LazyConfig::Config.environment)
+              base_pathname.join(LazyConfig::Config.environment.to_s)
             else
               base_pathname 
             end

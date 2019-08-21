@@ -23,7 +23,7 @@ module LazyConfig
       end
 
       def config_filename
-        "#{ActiveSupport::Inflector.underscore(name)}.yaml"
+        "#{ActiveSupport::Inflector.underscore(ActiveSupport::Inflector.demodulize(name))}.yaml"
       end
 
       def config_pathname

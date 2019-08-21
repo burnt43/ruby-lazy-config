@@ -42,7 +42,7 @@ module LazyConfig
       end
 
       def config
-        @config ||= YAML.load(IO.read(config_pathname))
+        @config ||= YAML.load(IO.read(config_pathname)).with_indifferent_access
       end
     end
 

@@ -48,9 +48,12 @@ module LazyConfig
       end
 
       def with_config(&block)
-        old_config = config.clone
+        # Yield the config hash to the block. You can then modify the config
+        # hash however you like. After the block executes, we'll set the
+        # config hash to nil, so the subsequent call to the config() method
+        # will load the config back from the yaml file.
         result = block.call(@config)
-        @config = old_config
+        @config = nil
         result
       end
     end

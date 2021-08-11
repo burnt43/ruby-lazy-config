@@ -49,7 +49,9 @@ module LazyConfig
 
       def with_config(&block)
         old_config = config.clone
-        block.call(@config).tap { @config = old_config }
+        result = block.call(@config)
+        @config = old_config
+        result
       end
     end
 

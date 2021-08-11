@@ -44,6 +44,12 @@ module LazyConfig
       def config
         @config ||= YAML.load(IO.read(config_pathname)).with_indifferent_access
       end
+
+      def with_config(&block)
+        old_config = @config.clone
+        block.call(@config)
+        @config = old_config
+      end
     end
 
     included do

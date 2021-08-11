@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'ruby-lazy-config'
-  s.version     = '0.0.1'
+  s.version     = '0.0.2'
   s.summary     = 'load config lazily and be aware of environment'
   s.description = 'Lazily Load Config'
   s.authors     = ['James Carson']

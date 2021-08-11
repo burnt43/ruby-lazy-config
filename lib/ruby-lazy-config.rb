@@ -52,7 +52,7 @@ module LazyConfig
         # hash however you like. After the block executes, we'll set the
         # config hash to nil, so the subsequent call to the config() method
         # will load the config back from the yaml file.
-        result = block.call(@config)
+        result = block.call(config)
         @config = nil
         result
       end
